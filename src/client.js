@@ -5,7 +5,7 @@ import config  from './config';
 require('superagent-bluebird-promise');
 
 
-const API_BASE_URL = 'http://api.openweathermap.org/data/2.5';
+const API_BASE_URL = 'http://api.channel.io/';
 
 
 /**
@@ -14,69 +14,20 @@ const API_BASE_URL = 'http://api.openweathermap.org/data/2.5';
 const client = mozaik => {
     mozaik.loadApiConfig(config);
 
-    const token = config.get('weather.apiToken');
-
     const methods = {
-        current(params) {
-            const { city, country, lang } = params;
-            const cacheKey = `weather.current.${city}.${country}.${lang}`;
-
-            if (cache.get(cacheKey) !== null) {
-                return new Promise((resolve) => {
-                    resolve(cache.get(cacheKey));
-                });
-            }
-
-            return request.get(`${API_BASE_URL}/weather?lang=${lang}&q=${city},${country}&appid=${token}`)
-                .promise()
-                .then((res) => {
-                    cache.put(cacheKey, res.body, 1800000);
-
-                    return res.body;
-                })
-            ;
-        },
-
-        forecast(params) {
-            const { city, country, lang, limit } = params;
-            const cacheKey = `weather.forecast.${city}.${country}.${lang}.${limit}`;
-
-            if (cache.get(cacheKey) !== null) {
-                return new Promise((resolve) => {
-                    resolve(cache.get(cacheKey));
-                });
-            }
-
-            return request.get(`${API_BASE_URL}/forecast/daily?mode=json&cnt=${limit}&lang=${lang}&q=${city},${country}&appid=${token}`)
-                .promise()
-                .then((res) => {
-                    cache.put(cacheKey, res.body.list, 1800000);
-
-                    return res.body.list;
-                })
-            ;
-        },
-
-        combined(params) {
-            const { city, country, lang, limit } = params;
-            const cacheKey = `weather.combined.${city}.${country}.${lang}.${limit}`;
-
-            if (cache.get(cacheKey) !== null) {
-                return new Promise((resolve) => {
-                    resolve(cache.get(cacheKey));
-                });
-            }
-
-            return Promise.props({
-                current:  methods.current(params),
-                forecast: methods.forecast(params)
-            })
-                .then((res) => {
-                    cache.put(cacheKey, res, 1800000);
-
-                    return res;
-                })
-            ;
+        channels(params) {
+            return new Promise((resolve) => {
+                  resolve({
+                      channels: [
+                          { name: 'Channel Name 1', description: 'Channel Description 1' },
+                          { name: 'Channel Name 2', description: 'Channel Description 2' },
+                          { name: 'Channel Name 3', description: 'Channel Description 3' },
+                          { name: 'Channel Name 4', description: 'Channel Description 4' },
+                          { name: 'Channel Name 5', description: 'Channel Description 5' },
+                          { name: 'Channel Name 6', description: 'Channel Description 6' }
+                      ]
+                  });
+            });
         }
     };
 
