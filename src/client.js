@@ -38,6 +38,22 @@ const client = mozaik => {
                     users: 25
                 })
             })
+        },
+
+        messages(params) {
+            return new Promise((resolve) => {
+                resolve({
+                    messages: [
+                        { date: '2016-08-01', teamMessages: 1000, directChatMessages: 800, userChatMessages: 200 },
+                        { date: '2016-08-02', teamMessages: 1100, directChatMessages: 700, userChatMessages: 100 },
+                        { date: '2016-08-03', teamMessages: 800, directChatMessages: 600, userChatMessages: 300 },
+                        { date: '2016-08-04', teamMessages: 900, directChatMessages: 500, userChatMessages: 100 },
+                        { date: '2016-08-05', teamMessages: 500, directChatMessages: 400, userChatMessages: 2000 },
+                        { date: '2016-08-06', teamMessages: 700, directChatMessages: 800, userChatMessages: 300 },
+                        { date: '2016-08-07', teamMessages: 800, directChatMessages: 1000, userChatMessages: 400 }
+                    ]
+                })
+            })
         }
     };
 
