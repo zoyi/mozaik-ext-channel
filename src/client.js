@@ -28,6 +28,14 @@ const client = mozaik => {
                       ]
                   });
             });
+        },
+
+        guests(params) {
+            return new Promise((resolve) => {
+                resolve({
+                    guestCounts: 3409
+                })
+            })
         }
     };
 
