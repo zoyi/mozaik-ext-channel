@@ -30,10 +30,12 @@ const client = mozaik => {
             });
         },
 
-        guests(params) {
+        funnel(params) {
             return new Promise((resolve) => {
                 resolve({
-                    guestCounts: 3409
+                    guests: 390,
+                    userChats: 40,
+                    users: 25
                 })
             })
         }

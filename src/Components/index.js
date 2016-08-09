@@ -1,8 +1,8 @@
 import LatestChannels from './LatestChannels.jsx';
-import GuestCounts from './GuestCounts.jsx';
+import FunnelCounts from './FunnelCounts.jsx';
 
 
 export default {
     LatestChannels,
-    GuestCounts
+    FunnelCounts
 };
