@@ -36,7 +36,11 @@ class TimeseriesChart {
                 y: {
                     min: 0
                 }
-            }
+            },
+            color: {
+              pattern: ['#5b83fe', '#00bc9b', '#ff4eaa']
+            },
+            padding: { top: 20, right: 70, bottom: 20, left: 70 }
         });
     }
 
@@ -78,9 +82,9 @@ class TimeseriesChart {
         return this.load({
             columns: [
                 ['x'].concat(xData),
-                ['Team messages'].concat(teamMessagesData),
-                ['DirectChat messages'].concat(directChatMessagesData),
-                ['UserChat messages'].concat(userChatMessagesData)
+                ['팀 챗\u00A0\u00A0\u00A0\u00A0'].concat(teamMessagesData),
+                ['다이렉트 챗\u00A0\u00A0\u00A0\u00A0'].concat(directChatMessagesData),
+                ['유저 챗'].concat(userChatMessagesData)
             ],
             regions: weekDayRegions
         });

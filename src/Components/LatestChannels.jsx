@@ -30,11 +30,12 @@ class LatestChannels extends Component {
                     <span className="widget__header__subject">최근 가입한 채널 목록</span>
                     <i className="fa fa-info-circle" />
                 </div>
-                <div className="widget__body">
+                <div className="widget__body channel__latest-channels">
                     {
                         this.state.channels.map((channel) => {
                             return (
-                                <div className="list__item">
+                                <div className="list__item channel__latest-channels__item">
+                                    <img src={channel.avatarUrl}/>
                                     {channel.name}<br/>
                                     <div className="list__item__time">
                                         {channel.description}

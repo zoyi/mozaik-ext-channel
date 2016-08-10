@@ -35,9 +35,6 @@ class FunnelCounts extends Component {
                 </div>
                 <div className="widget__body">
                     <div className="channel__funnel-counts__body">
-                        <span className="channel__funnel-counts__icon">
-                            <i className="fa fa-check-square"/>
-                        </span>
                         <span className="channel__funnel-counts__message">
                             {`${counts} 명`}
                         </span>

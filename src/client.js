@@ -19,12 +19,12 @@ const client = mozaik => {
             return new Promise((resolve) => {
                   resolve({
                       channels: [
-                          { name: 'Channel Name 1', description: 'Channel Description 1' },
-                          { name: 'Channel Name 2', description: 'Channel Description 2' },
-                          { name: 'Channel Name 3', description: 'Channel Description 3' },
-                          { name: 'Channel Name 4', description: 'Channel Description 4' },
-                          { name: 'Channel Name 5', description: 'Channel Description 5' },
-                          { name: 'Channel Name 6', description: 'Channel Description 6' }
+                          { name: 'Channel Name 1', description: 'Channel Description 1', avatarUrl: 'https://cdn.channel.io/channel/1-22aab459f056a19cc337a8fdc1534340-thumb.png' },
+                          { name: 'Channel Name 2', description: 'Channel Description 2', avatarUrl: 'https://cdn.channel.io/channel/1-22aab459f056a19cc337a8fdc1534340-thumb.png' },
+                          { name: 'Channel Name 3', description: 'Channel Description 3', avatarUrl: 'https://cdn.channel.io/channel/1-22aab459f056a19cc337a8fdc1534340-thumb.png' },
+                          { name: 'Channel Name 4', description: 'Channel Description 4', avatarUrl: 'https://cdn.channel.io/channel/1-22aab459f056a19cc337a8fdc1534340-thumb.png' },
+                          { name: 'Channel Name 5', description: 'Channel Description 5', avatarUrl: 'https://cdn.channel.io/channel/1-22aab459f056a19cc337a8fdc1534340-thumb.png' },
+                          { name: 'Channel Name 6', description: 'Channel Description 6', avatarUrl: 'https://cdn.channel.io/channel/1-22aab459f056a19cc337a8fdc1534340-thumb.png' }
                       ]
                   });
             });
